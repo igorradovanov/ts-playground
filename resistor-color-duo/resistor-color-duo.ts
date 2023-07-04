@@ -1,6 +1,5 @@
 export function decodedValue([firstBand, secondBand, thirdBand]: [string, string, string?]): number {
 
-
   const resistanceValues = new Map<string, number>([
     ["black", 0],
     ["brown", 1],
@@ -22,9 +21,6 @@ export function decodedValue([firstBand, secondBand, thirdBand]: [string, string
   const value1 = resistanceValues.get(firstBand)!;
   const value2 = resistanceValues.get(secondBand)!;
 
-  if (firstBand === "black") {
-    return value2;
-  } else {
-    return value1 * 10 + value2;
-  }
+  return value1 * 10 + value2;
+
 }
